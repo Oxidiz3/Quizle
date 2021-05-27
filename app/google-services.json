@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "618293938186",
+    "project_id": "quizle-31cc7",
+    "storage_bucket": "quizle-31cc7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618293938186:android:1396ee2629629b17def7f3",
+        "android_client_info": {
+          "package_name": "com.team5.quizzle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618293938186-lgg5sg8e17pre2i23vjtjil4ehsq3cu6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN3PIPHhUrqpznvyUbj0yYYWT8wJA5zz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618293938186-lgg5sg8e17pre2i23vjtjil4ehsq3cu6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
