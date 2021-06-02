@@ -38,14 +38,12 @@
         android:id="@+id/reading_button"
         android:layout_width="@dimen/square_buttons"
         android:layout_height="@dimen/square_buttons"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="128dp"
         android:text="@string/reading_section"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.917"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/writing_button"
@@ -66,14 +64,12 @@
         android:id="@+id/science_button"
         android:layout_width="@dimen/square_buttons"
         android:layout_height="@dimen/square_buttons"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/science_section"
         app:layout_constraintBottom_toTopOf="@+id/reading_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.917"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.constraintlayout.widget.Barrier
         android:layout_width="wrap_content"
