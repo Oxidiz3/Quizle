@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Quizle</string>
+    <string name="app_name">Quizzle</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="math_section">Math</string>
-    <string name= "science_section">Science</string>
-    <string name= "reading_section">Reading</string>
+    <string name="science_section">Science</string>
+    <string name="reading_section">Reading</string>
     <string name="writing_section">Writing</string>
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -14,4 +14,18 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_flash_card">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="flash_card_title">Flash Cards</string>
+    <string name="flash_card_place_holder">Flash card placeholder</string>
+
+    <string name="card_title">Math</string>
+    <string name="card_question_content">Example question</string>
+    <string name="card_answer_content">Example answer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Answer">Answer</string>
+    <string name="Back">Back</string>
 </resources>

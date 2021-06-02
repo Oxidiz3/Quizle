@@ -12,17 +12,23 @@
         tools:layout="@layout/fragment_first">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_FirstFragment_to_flashCard"
+            app:destination="@id/flashCard" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.team5.quizzle.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/flashCard"
+        android:name="com.team5.quizzle.FlashCard"
+        android:label="fragment_flash_card"
+        tools:layout="@layout/fragment_flash_card" >
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_flashCard_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.team5.quizzle.MainActivity"
+        android:label="activity_main"
+        app:action="@string/math_section"
+        tools:layout="@layout/activity_main" />
+
 </navigation>
