@@ -1,11 +1,14 @@
 package com.team5.quizzle
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,15 +17,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
+
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
+//            testDb()
         }
 //        findViewById<FloatingActionButton>(R.id.math_button).setOnClickListener { view ->
 //            Snackbar.make(view, "Hello World!", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show()
 //        }
     }
+
+/*        private fun testDb(){
+
+            val firstCard = hashMapOf(
+                "Word" to "Socks",
+                "Definition" to "Feet gloves"
+            )
+            val db = Firebase.firestore
+            db.collection("Flashcard")
+                .add(firstCard)
+        }*/
 //
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
