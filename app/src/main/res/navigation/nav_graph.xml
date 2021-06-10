@@ -2,33 +2,26 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    android:id="@+id/nav_graph">
 
-    <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.team5.quizzle.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
-        <action
-            android:id="@+id/action_FirstFragment_to_flashCard"
-            app:destination="@id/flashCard" />
-    </fragment>
     <fragment
         android:id="@+id/flashCard"
         android:name="com.team5.quizzle.FlashCard"
         android:label="fragment_flash_card"
         tools:layout="@layout/fragment_flash_card" >
         <action
-            android:id="@+id/action_flashCard_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_flashCard_to_mainActivity"
+            app:destination="@id/mainActivity" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"
         android:name="com.team5.quizzle.MainActivity"
         android:label="activity_main"
         app:action="@string/math_section"
-        tools:layout="@layout/activity_main" />
+        tools:layout="@layout/activity_main" >
+        <action
+            android:id="@+id/activity_to_flashCard"
+            app:destination="@id/flashCard" />
+    </activity>
 
 </navigation>
