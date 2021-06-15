@@ -2,26 +2,34 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainContent">
 
     <fragment
-        android:id="@+id/flashCard"
-        android:name="com.team5.quizzle.FlashCard"
-        android:label="fragment_flash_card"
-        tools:layout="@layout/fragment_flash_card" >
+        android:id="@+id/cardCreation"
+        android:name="com.team5.quizzle.CardCreation"
+        android:label="fragment_card_creation"
+        tools:layout="@layout/fragment_card_creation" >
         <action
-            android:id="@+id/action_flashCard_to_mainActivity"
-            app:destination="@id/mainActivity" />
+            android:id="@+id/action_cardCreation_to_mainContent"
+            app:destination="@id/mainContent" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainContent"
+        android:name="com.team5.quizzle.MainContent"
+        android:label="fragment_main_content"
+        tools:layout="@layout/fragment_main_content" >
+        <action
+            android:id="@+id/action_mainContent_to_cardCreation"
+            app:destination="@id/cardCreation" />
+        <action
+            android:id="@+id/action_mainContent_to_flashCards2"
+            app:destination="@id/flashCards2" />
     </fragment>
     <activity
-        android:id="@+id/mainActivity"
-        android:name="com.team5.quizzle.MainActivity"
-        android:label="activity_main"
-        app:action="@string/math_section"
-        tools:layout="@layout/activity_main" >
-        <action
-            android:id="@+id/activity_to_flashCard"
-            app:destination="@id/flashCard" />
-    </activity>
+        android:id="@+id/flashCards2"
+        android:name="com.team5.quizzle.FlashCards"
+        android:label="activity_flash_cards"
+        tools:layout="@layout/activity_flash_cards" />
 
 </navigation>
