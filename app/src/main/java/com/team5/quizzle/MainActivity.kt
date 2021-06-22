@@ -2,16 +2,9 @@ package com.team5.quizzle
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import androidx.navigation.findNavController
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,19 +13,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
+//        findViewById<Button>(R.id.).setOnClickListener{ view ->
+//            view.findNavController().navigate(R.id.action_mainContent_to_cardCreation)
+//        }
 
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+//        findViewById<FloatingActionButton>(R.id.addFlashCard).setOnClickListener { view ->
+//            Navigation.setViewNavController(view, NavController())
 //            testDb()
+//        }
+
+//        val mathButton : Button = findViewById<Button>(R.id.math_button)
+//        mathButton.setOnClickListener {flashCards("math")}
         }
-        val mathButton : Button = findViewById(R.id.math_button)
-        mathButton.setOnClickListener {flashCards("math")}
-        }
+
 //        findViewById<FloatingActionButton>(R.id.math_button).setOnClickListener { view ->
 //            Snackbar.make(view, "Hello World!", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show()
 //        }
+
     private fun flashCards(subject: String){
         val newIntent = Intent(this, FlashCards::class.java)
         var databaseGet = ""
@@ -45,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         newIntent.putExtra("subject", databaseGet)
         startActivity(newIntent)
     }
+
 /*        private fun testDb(){
 
             val firstCard = hashMapOf(

@@ -24,6 +24,11 @@
     <string name="card_title">Math</string>
     <string name="card_question_content">Example question</string>
     <string name="card_answer_content">Example answer</string>
+
+    <!-- Card Creation -->
+    <string name="front_side_hint">Front Side</string>
+    <string name="back_side_hint">Back Side</string>
+    <string name="submit_button">Submit</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Answer">Answer</string>
