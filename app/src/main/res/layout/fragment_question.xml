@@ -22,7 +22,7 @@
             android:gravity="center"
             android:text="@string/how_would_you_like_to_study"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-            app:layout_constraintBottom_toTopOf="@+id/Study_button"
+            app:layout_constraintBottom_toTopOf="@+id/study_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
             app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
         <Button
-            android:id="@+id/Study_button"
+            android:id="@+id/study_button"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"

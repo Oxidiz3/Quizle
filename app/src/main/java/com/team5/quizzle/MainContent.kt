@@ -49,25 +49,26 @@ class MainContent : Fragment() {
 
         // Math button
         view.findViewById<Button>(R.id.math_button).setOnClickListener{
-            bundle.putString(titleKey, R.string.math_section.toString())
+            bundle.putString(titleKey, "Math")
+
             Navigation.findNavController(view).navigate(R.id.action_mainContent_to_flashCard)
         }
 
         // Writing button
         view.findViewById<Button>(R.id.writing_button).setOnClickListener{
-            bundle.putString(titleKey, R.string.writing_section.toString())
+            bundle.putString(titleKey, "Writing")
             Navigation.findNavController(view).navigate(R.id.action_mainContent_to_flashCard)
         }
 
         // Science button
         view.findViewById<Button>(R.id.science_button).setOnClickListener{
-            bundle.putString(titleKey, R.string.science_section.toString())
+            bundle.putString(titleKey, "Science")
             Navigation.findNavController(view).navigate(R.id.action_mainContent_to_flashCard)
         }
 
         // Reading button
         view.findViewById<Button>(R.id.reading_button).setOnClickListener{
-            bundle.putString(titleKey, R.string.reading_section.toString())
+            bundle.putString(titleKey, "Reading")
             Navigation.findNavController(view).navigate(R.id.action_mainContent_to_flashCard)
         }
 

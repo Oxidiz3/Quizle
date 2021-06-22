@@ -38,10 +38,11 @@ class FlashCard : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val titleText:TextView = view.findViewById<TextView>(R.id.titleText)
-        titleText.setText() = bundle.getString(titleKey)
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_flash_card, container, false)
+
+        // Set the title text to the correct button
+        view.findViewById<TextView>(R.id.titleText).text = bundle.getString(titleKey)
 
         // Answer button
         view.findViewById<Button>(R.id.btn_answer).setOnClickListener{
