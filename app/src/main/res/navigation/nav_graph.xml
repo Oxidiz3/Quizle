@@ -25,11 +25,19 @@
         <action
             android:id="@+id/action_mainContent_to_flashCards2"
             app:destination="@id/flashCards2" />
+        <action
+            android:id="@+id/action_mainContent_to_question"
+            app:destination="@id/question" />
     </fragment>
     <activity
         android:id="@+id/flashCards2"
         android:name="com.team5.quizzle.FlashCards"
         android:label="activity_flash_cards"
         tools:layout="@layout/activity_flash_cards" />
+    <fragment
+        android:id="@+id/question"
+        android:name="com.team5.quizzle.question"
+        android:label="fragment_question"
+        tools:layout="@layout/fragment_question" />
 
 </navigation>
