@@ -12,27 +12,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
-
-//        findViewById<Button>(R.id.).setOnClickListener{ view ->
-//            view.findNavController().navigate(R.id.action_mainContent_to_cardCreation)
-//        }
-
-//        findViewById<FloatingActionButton>(R.id.addFlashCard).setOnClickListener { view ->
-//            Navigation.setViewNavController(view, NavController())
-//            testDb()
-//        }
-
-//        val mathButton : Button = findViewById<Button>(R.id.math_button)
-//        mathButton.setOnClickListener {flashCards("math")}
-        }
-
-//        findViewById<FloatingActionButton>(R.id.math_button).setOnClickListener { view ->
-//            Snackbar.make(view, "Hello World!", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()
-//        }
-
+    }
     private fun flashCards(subject: String){
-        val newIntent = Intent(this, FlashCards::class.java)
+        val newIntent = Intent(this, FlashCard::class.java)
         var databaseGet = ""
         when (subject) {
             "math" -> databaseGet = "math"

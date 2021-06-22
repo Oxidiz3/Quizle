@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_card_creation" >
         <action
             android:id="@+id/action_cardCreation_to_mainContent"
-            app:destination="@id/mainContent" />
+            app:destination="@id/mainContent"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/mainContent"
@@ -21,15 +25,31 @@
         tools:layout="@layout/fragment_main_content" >
         <action
             android:id="@+id/action_mainContent_to_cardCreation"
-            app:destination="@id/cardCreation" />
+            app:destination="@id/cardCreation"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
-            android:id="@+id/action_mainContent_to_flashCards2"
-            app:destination="@id/flashCards2" />
+            android:id="@+id/action_mainContent_to_flashCard"
+            app:destination="@id/flashCard"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
-    <activity
-        android:id="@+id/flashCards2"
-        android:name="com.team5.quizzle.FlashCards"
-        android:label="activity_flash_cards"
-        tools:layout="@layout/activity_flash_cards" />
+    <fragment
+        android:id="@+id/flashCard"
+        android:name="com.team5.quizzle.FlashCard"
+        android:label="fragment_flash_card"
+        tools:layout="@layout/fragment_flash_card" >
+        <action
+            android:id="@+id/action_flashCard_to_mainContent"
+            app:destination="@id/mainContent"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
 
 </navigation>
