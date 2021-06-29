@@ -5,14 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
+val bundle = Bundle()
+const val titleKey = "TitleKey"
 
 /**
  * A simple [Fragment] subclass.
@@ -38,9 +41,37 @@ class MainContent : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_main_content, container, false)
+
+        // Plus
         view.findViewById<FloatingActionButton>(R.id.addFlashCard).setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_mainContent_to_cardCreation)
         }
+
+        // Math button
+        view.findViewById<Button>(R.id.math_button).setOnClickListener{
+            bundle.putString(titleKey, "Math")
+
+            Navigation.findNavController(view).navigate(R.id.action_mainContent_to_flashCard)
+        }
+
+        // Writing button
+        view.findViewById<Button>(R.id.writing_button).setOnClickListener{
+            bundle.putString(titleKey, "Writing")
+            Navigation.findNavController(view).navigate(R.id.action_mainContent_to_flashCard)
+        }
+
+        // Science button
+        view.findViewById<Button>(R.id.science_button).setOnClickListener{
+            bundle.putString(titleKey, "Science")
+            Navigation.findNavController(view).navigate(R.id.action_mainContent_to_flashCard)
+        }
+
+        // Reading button
+        view.findViewById<Button>(R.id.reading_button).setOnClickListener{
+            bundle.putString(titleKey, "Reading")
+            Navigation.findNavController(view).navigate(R.id.action_mainContent_to_flashCard)
+        }
+
         return view
     }
 
