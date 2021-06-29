@@ -39,10 +39,10 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
-        android:id="@+id/flashCard"
+        android:id="@+id/studdyMode"
         android:name="com.team5.quizzle.FlashCard"
         android:label="fragment_flash_card"
-        tools:layout="@layout/fragment_flash_card" >
+        tools:layout="@layout/fragment_flash_card">
         <action
             android:id="@+id/action_flashCard_to_mainContent"
             app:destination="@id/mainContent"
@@ -58,11 +58,23 @@
         tools:layout="@layout/fragment_question" >
         <action
             android:id="@+id/action_question_to_flashCard"
-            app:destination="@id/flashCard"
+            app:destination="@id/studdyMode"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_enter_anim"
             app:popExitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_question_to_testMode"
+            app:destination="@id/testMode" />
+    </fragment>
+    <fragment
+        android:id="@+id/testMode"
+        android:name="com.team5.quizzle.TestMode"
+        android:label="fragment_test_mode"
+        tools:layout="@layout/fragment_test_mode" >
+        <action
+            android:id="@+id/action_testMode_to_mainContent"
+            app:destination="@id/mainContent" />
     </fragment>
 
 </navigation>
