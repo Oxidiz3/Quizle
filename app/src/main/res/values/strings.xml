@@ -2,12 +2,15 @@
     <string name="app_name">Quizzle</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
+
     <string name="math_section">Math</string>
     <string name="science_section">Science</string>
     <string name="reading_section">Reading</string>
     <string name="writing_section">Writing</string>
+
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
+
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="Email_Button">Email Button</string>
@@ -21,7 +24,6 @@
     <string name="flash_card_title">Flash Cards</string>
     <string name="flash_card_place_holder">Flash card placeholder</string>
 
-    <string name="card_title">Math</string>
     <string name="card_question_content">Example question</string>
     <string name="card_answer_content">Example answer</string>
 
@@ -29,8 +31,12 @@
     <string name="front_side_hint">Front Side</string>
     <string name="back_side_hint">Back Side</string>
     <string name="submit_button">Submit</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Answer">Answer</string>
     <string name="Back">Back</string>
+    <string name="study_mode">Study Mode</string>
+    <string name="test_mode">Test Mode</string>
+    <string name="how_would_you_like_to_study">How would you like to study?</string>
 </resources>
