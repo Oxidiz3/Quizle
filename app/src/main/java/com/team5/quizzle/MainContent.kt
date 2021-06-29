@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.RadioButton
 import androidx.navigation.Navigation
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -94,5 +95,31 @@ class MainContent : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    fun onRadioButtonClicked(view: View){
+        if (view is RadioButton){
+            // is the button now checked?
+            val checked = view.isChecked
+
+            when (view.getId()){
+                R.id.radioButtonMath ->
+                    if(checked){
+                        bundle.putString(titleKey, "Math")
+                    }
+                R.id.radioButtonReading ->
+                    if(checked){
+                        bundle.putString(titleKey, "Reading")
+                    }
+                R.id.radioButtonScience ->
+                    if(checked){
+                        bundle.putString(titleKey, "Science")
+                    }
+                R.id.radioButtonWriting ->
+                    if(checked){
+                        bundle.putString(titleKey, "Writing")
+                    }
+            }
+        }
     }
 }

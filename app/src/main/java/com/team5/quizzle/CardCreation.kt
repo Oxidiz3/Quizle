@@ -42,9 +42,10 @@ class CardCreation : Fragment() {
         val view = inflater.inflate(R.layout.fragment_card_creation, container, false)
         view.findViewById<Button>(R.id.cardCreationSubmit).setOnClickListener{
 
-            //Make the call to the database here vvvvvvv
             var question = view.findViewById<TextInputEditText>(R.id.backSideInput).text
             var answer = view.findViewById<TextInputEditText>(R.id.frontSideInput).text
+            var subject = bundle.getString(titleKey)
+            //Make the call to the database here vvvvvvv
 
             Navigation.findNavController(view).navigate(R.id.action_cardCreation_to_mainContent)
 
