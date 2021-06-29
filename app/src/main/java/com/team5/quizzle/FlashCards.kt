@@ -28,29 +28,29 @@ class FlashCards : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flash_cards)
-        getVocab()
+//        getVocab()
 //        arguments?.let {
 //            param1 = it.getString(ARG_PARAM1)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
     }
 
-    fun getVocab() {
-        val db = Firebase.firestore
-        val docRef = db.collection("Vocab").document("1")
-        docRef.get()
-            .addOnSuccessListener { document ->
-                if (document != null) {
-                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
-                    word = document.data["word"]
-                    defintion = document.data["defintion"]
-                } else {
-                    Log.d(TAG, "No such document")
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.d(TAG, "get failed with ", exception)
-            }
-
-    }
+//    fun getVocab() {
+//        val db = Firebase.firestore
+//        val docRef = db.collection("Vocab").document("1")
+//        docRef.get()
+//            .addOnSuccessListener { document ->
+//                if (document != null) {
+//                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+//                    word = document.data["word"]?
+//                    defintion = document.data["defintion"]?
+//                } else {
+//                    Log.d(TAG, "No such document")
+//                }
+//            }
+//            .addOnFailureListener { exception ->
+//                Log.d(TAG, "get failed with ", exception)
+//            }
+//
+//    }
 }

@@ -9,6 +9,8 @@ import android.widget.Button
 import androidx.navigation.Navigation
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -45,12 +47,39 @@ class CardCreation : Fragment() {
             //Make the call to the database here vvvvvvv
             var question = view.findViewById<TextInputEditText>(R.id.backSideInput).text
             var answer = view.findViewById<TextInputEditText>(R.id.frontSideInput).text
-
+            dataBase(question = question.toString(), answer = answer.toString())
             Navigation.findNavController(view).navigate(R.id.action_cardCreation_to_mainContent)
+
 
         }
         return view
     }
+    private fun dataBase(question: String, answer: String): Boolean {
+
+        val firstCard = hashMapOf(
+            "Word" to question,
+            "Definition" to answer
+        )
+        val db = Firebase.firestore
+        val cardRef = db.collection("Flashcard")
+        val cardQuery = cardRef.whereEqualTo("Word", question)
+            .get()
+
+        if (cardQuery.equals(firstCard)){
+            return false
+        }
+
+
+            db.collection("Flashcard")
+                .add(firstCard)
+            return true
+        }
+
+
+    private fun check() {
+
+    }
+
 
     companion object {
         /**
