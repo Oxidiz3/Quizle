@@ -26,17 +26,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(newIntent)
     }
 
-/*        private fun testDb(){
-
-            val firstCard = hashMapOf(
-                "Word" to "Socks",
-                "Definition" to "Feet gloves"
-            )
-            val db = Firebase.firestore
-            db.collection("Flashcard")
-                .add(firstCard)
-        }*/
-//
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
