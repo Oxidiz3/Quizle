@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.RadioButton
 import androidx.navigation.Navigation
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
@@ -25,6 +26,21 @@ class CardCreation : Fragment() {
 
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_card_creation, container, false)
+
+        // Change bundle based on radiobutton selected
+        view.findViewById<RadioButton>(R.id.radioButtonScience).setOnClickListener{
+            bundle.putString(titleKey, "Science")
+        }
+        view.findViewById<RadioButton>(R.id.radioButtonReading).setOnClickListener{
+            bundle.putString(titleKey, "Reading")
+        }
+        view.findViewById<RadioButton>(R.id.radioButtonMath).setOnClickListener{
+            bundle.putString(titleKey, "Math")
+        }
+        view.findViewById<RadioButton>(R.id.radioButtonWriting).setOnClickListener{
+            bundle.putString(titleKey, "Writing")
+        }
+
         view.findViewById<Button>(R.id.cardCreationSubmit).setOnClickListener{
 
             // Gets answer or definition from the back side field

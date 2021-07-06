@@ -7,17 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.navigation.Navigation
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 
 val bundle = Bundle()
 const val titleKey = "TitleKey"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MainContent.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MainContent : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +31,6 @@ class MainContent : Fragment() {
         // Math button
         view.findViewById<Button>(R.id.math_button).setOnClickListener{
             bundle.putString(titleKey, "Math")
-
             Navigation.findNavController(view).navigate(R.id.action_mainContent_to_flashCard)
         }
 
@@ -60,29 +56,4 @@ class MainContent : Fragment() {
     }
 
 
-    fun onRadioButtonClicked(view: View){
-        if (view is RadioButton){
-            // is the button now checked?
-            val checked = view.isChecked
-
-            when (view.getId()){
-                R.id.radioButtonMath ->
-                    if(checked){
-                        bundle.putString(titleKey, "Math")
-                    }
-                R.id.radioButtonReading ->
-                    if(checked){
-                        bundle.putString(titleKey, "Reading")
-                    }
-                R.id.radioButtonScience ->
-                    if(checked){
-                        bundle.putString(titleKey, "Science")
-                    }
-                R.id.radioButtonWriting ->
-                    if(checked){
-                        bundle.putString(titleKey, "Writing")
-                    }
-            }
-        }
-    }
 }
