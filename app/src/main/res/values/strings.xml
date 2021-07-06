@@ -39,4 +39,5 @@
     <string name="study_mode">Study Mode</string>
     <string name="test_mode">Test Mode</string>
     <string name="how_would_you_like_to_study">How would you like to study?</string>
+    <string name="enter_answer_here">Enter Answer here</string>
 </resources>
