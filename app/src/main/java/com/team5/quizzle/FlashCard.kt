@@ -80,10 +80,10 @@ class FlashCard : Fragment() {
             .addOnSuccessListener { document ->
                 if (document != null) {
                     Log.d(TAG, "DocumentSnapshot data: ${document.data}")
-                    question = document.data?.get("Question")?.toString()
+                    question = document.data?.get("Word")?.toString()
                     questionTextView.text = question
-                    answer = document.data?.get("Answer")?.toString()
-                    Log.d(TAG, "Question: $question answer: $answer")
+                    answer = document.data?.get("Definition")?.toString()
+                    Log.d(TAG, "Word: $question Definition: $answer")
                 } else {
                     Log.d(TAG, "No such document")
                 }

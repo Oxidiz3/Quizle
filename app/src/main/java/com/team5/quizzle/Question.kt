@@ -1,12 +1,17 @@
 package com.team5.quizzle
 
+import android.content.ContentValues
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.Navigation
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class question : Fragment() {
     override fun onCreateView(
@@ -30,4 +35,6 @@ class question : Fragment() {
 
         return view
     }
+
+
 }
