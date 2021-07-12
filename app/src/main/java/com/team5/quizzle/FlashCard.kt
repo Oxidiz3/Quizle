@@ -59,15 +59,17 @@ class FlashCard : Fragment() {
 
         view.findViewById<TextView>(R.id.textView3).text = answer
 
-
         // Answer button
-        view.findViewById<Button>(R.id.btn_answer).setOnClickListener{
+        val answerButton = view.findViewById<Button>(R.id.btn_answer)
+        answerButton.setOnClickListener{
             if (flipCounter % 2 == 0){
                 questionTextView.text = answer
+                answerButton.text = "Question"
                 flipCounter += 1
             }
             else{
                 questionTextView.text = question
+                answerButton.text = "Answer"
                 flipCounter += 1
             }
 
@@ -103,25 +105,5 @@ class FlashCard : Fragment() {
                 Log.d(TAG, "get failed with ", exception)
             }
 
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FlashCard.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FlashCard().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }
