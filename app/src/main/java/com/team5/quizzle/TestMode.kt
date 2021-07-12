@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.navigation.Navigation
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -43,18 +44,25 @@ class TestMode : Fragment() {
         val view = inflater.inflate(R.layout.fragment_test_mode, container, false)
         textInput = view.findViewById<TextInputEditText>(R.id.answerField)
         textInput.setImeActionLabel("Answer", KeyEvent.KEYCODE_ENTER);
+
         // Inflate the layout for this fragment
         wordTextView = view.findViewById<TextView>(R.id.textView3)
         wordTextView.text = word
         view.findViewById<Button>(R.id.btn_answer).setOnClickListener{
             userAnswer = textInput.text.toString()
             Log.d(TAG, "Answer: $userAnswer")
+
             if (checkAnswer(userAnswer!!)){
-                Log.d(TAG, "User Correct")
+                Snackbar.make(view, "Correct Answer", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+                textInput.setText("")
                 getVocab()
 
             }
             else{
+                // Show the answer was wrong
+                Snackbar.make(view, "Incorrect Answer", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
                 Log.d(TAG, "User Incorrect")
 
             }
