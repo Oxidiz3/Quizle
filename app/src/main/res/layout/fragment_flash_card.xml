@@ -42,7 +42,7 @@
             android:id="@+id/btn_answer"
             android:layout_width="146dp"
             android:layout_height="44dp"
-            android:text="@string/Answer"
+            android:text="@string/Flip"
             app:layout_constraintEnd_toEndOf="@+id/cardView"
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
 

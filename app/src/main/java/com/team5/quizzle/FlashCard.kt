@@ -29,6 +29,7 @@ class FlashCard : Fragment() {
     private var param2: String? = null
     private var question: String? = null
     private var answer: String? = null
+    private var flipCounter: Int = 2
 
     lateinit var questionTextView : TextView
 
@@ -57,9 +58,19 @@ class FlashCard : Fragment() {
 
 
         view.findViewById<TextView>(R.id.textView3).text = answer
+
+
         // Answer button
         view.findViewById<Button>(R.id.btn_answer).setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_flashCard_to_mainContent)
+            if (flipCounter % 2 == 0){
+                questionTextView.text = answer
+                flipCounter += 1
+            }
+            else{
+                questionTextView.text = question
+                flipCounter += 1
+            }
+
         }
 
         // Back button
