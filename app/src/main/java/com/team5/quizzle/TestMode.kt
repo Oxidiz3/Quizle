@@ -58,6 +58,7 @@ class TestMode : Fragment() {
                 textInput.setText("")
                 getVocab()
 
+
             }
             else{
                 // Show the answer was wrong
