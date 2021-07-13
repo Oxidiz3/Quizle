@@ -31,10 +31,8 @@ the database answer. The plus button on the bottom allows them to add flash card
 * Fulgence Dalo 
 
 # Useful Websites
-
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [FireBase](https://firebase.google.com/docs?authuser=0)
+* [Android Studio Emulator Help](https://androidstudio.googleblog.com/2020/12/android-emulator-apple-silicon-preview.html)
 
 # Future Work
 
