@@ -1,21 +1,15 @@
 package com.team5.quizzle
 
-import android.app.Dialog
-import android.content.ContentValues
 import android.content.ContentValues.TAG
-import android.content.Context
-import android.os.Build
 import android.os.Bundle
-import android.text.Layout
-import android.transition.Slide
-import android.transition.TransitionManager
 import android.util.Log
-import android.view.*
-import android.widget.*
+import android.view.KeyEvent
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.annotation.RequiresApi
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.navigation.Navigation
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.firestore.ktx.firestore
@@ -42,11 +36,11 @@ class TestMode : Fragment() {
 
     ): View? {
         val view = inflater.inflate(R.layout.fragment_test_mode, container, false)
-        textInput = view.findViewById<TextInputEditText>(R.id.answerField)
+        textInput = view.findViewById(R.id.answerField)
         textInput.setImeActionLabel("Answer", KeyEvent.KEYCODE_ENTER);
 
         // Inflate the layout for this fragment
-        wordTextView = view.findViewById<TextView>(R.id.textView3)
+        wordTextView = view.findViewById(R.id.textView3)
         wordTextView.text = word
         view.findViewById<Button>(R.id.btn_answer).setOnClickListener{
             userAnswer = textInput.text.toString()
@@ -77,23 +71,23 @@ class TestMode : Fragment() {
     private fun getVocab() {
         val db = Firebase.firestore
         val subject = bundle.getString(titleKey)
-        Log.d(ContentValues.TAG, "$subject")
+        Log.d(TAG, "$subject")
         val docRef = db.collection("Flashcard").document("$subject-$index")
         docRef.get()
             .addOnSuccessListener { document ->
                 if (document != null) {
-                    Log.d(ContentValues.TAG, "DocumentSnapshot data: ${document.data}")
+                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
                     word = document.data?.get("Word")?.toString()
                     wordTextView.text = word
                     defintion = document.data?.get("Definition")?.toString()
-                    Log.d(ContentValues.TAG, "Word: $word Definition: $defintion")
+                    Log.d(TAG, "Word: $word Definition: $defintion")
                     index += 1
                 } else {
-                    Log.d(ContentValues.TAG, "No such document")
+                    Log.d(TAG, "No such document")
                 }
             }
             .addOnFailureListener { exception ->
-                Log.d(ContentValues.TAG, "get failed with ", exception)
+                Log.d(TAG, "get failed with ", exception)
                 index = 1
             }
 

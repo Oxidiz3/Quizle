@@ -115,6 +115,7 @@ class CardCreation : Fragment() {
                             var countSubject = 1
                             for (document in documents){
                                 docId = document.id
+                                //make sure all ids are 7 characters
                                 if (docId.slice(0..3) == "Math"){
                                     docId = "Mathxxx"
                                 }
