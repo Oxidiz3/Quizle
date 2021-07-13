@@ -63,8 +63,6 @@ class TestMode : Fragment() {
             }
         }
 
-
-
         return view
     }
 
