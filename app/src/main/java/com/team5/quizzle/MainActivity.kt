@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private fun flashCards(subject: String){
         val newIntent = Intent(this, FlashCard::class.java)
         var databaseGet = ""
+        //Get different flash card title based on the button pressed
         when (subject) {
             "math" -> databaseGet = "math"
             "science " -> databaseGet = "science"

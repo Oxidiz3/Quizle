@@ -30,7 +30,9 @@ class FlashCard : Fragment() {
     private var question: String? = null
     private var answer: String? = null
     private var flipCounter: Int = 2
+    private var index: Int = 1
 
+    //Variable is set later so we use lateinit
     lateinit var questionTextView : TextView
 
 
@@ -40,6 +42,7 @@ class FlashCard : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        //Run the get vocab to get the first flash card
         getVocab()
 
     }
@@ -75,6 +78,16 @@ class FlashCard : Fragment() {
 
         }
 
+        //set on click listener to the text view to switch cards when they are pressed
+        questionTextView.setOnClickListener {
+            index += 1
+            getVocab()
+            //Check to see if the card is null
+            if (question == null){
+                index = 1
+                getVocab()
+            }
+        }
         // Back button
         view.findViewById<Button>(R.id.btn_back).setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_flashCard_to_mainContent)
@@ -86,15 +99,23 @@ class FlashCard : Fragment() {
 
     private fun getVocab() {
         val db = Firebase.firestore
+        //get the subject string from the title
         val subject = bundle.getString(titleKey)
         Log.d(TAG, "$subject")
-        val docRef = db.collection("Flashcard").document("$subject-1")
+
+        //Call the card based on the subject and index from the database
+        val docRef = db.collection("Flashcard").document("$subject-$index")
         docRef.get()
+                //add on success listener to run code once the database document is obtained
             .addOnSuccessListener { document ->
+
                 if (document != null) {
                     Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+                    //set the question variable
                     question = document.data?.get("Word")?.toString()
+                    //change the text view to show the question/word
                     questionTextView.text = question
+                    //set the answer variable
                     answer = document.data?.get("Definition")?.toString()
                     Log.d(TAG, "Word: $question Definition: $answer")
                 } else {

@@ -27,6 +27,7 @@ class TestMode : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //Call the database
         getVocab()
 
     }
@@ -41,18 +42,18 @@ class TestMode : Fragment() {
 
         // Inflate the layout for this fragment
         wordTextView = view.findViewById(R.id.textView3)
+        //Set text to the word
         wordTextView.text = word
         view.findViewById<Button>(R.id.btn_answer).setOnClickListener{
             userAnswer = textInput.text.toString()
             Log.d(TAG, "Answer: $userAnswer")
 
+            //check if the answer was correct
             if (checkAnswer(userAnswer!!)){
                 Snackbar.make(view, "Correct Answer", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
                 textInput.setText("")
                 getVocab()
-
-
             }
             else{
                 // Show the answer was wrong
@@ -68,11 +69,14 @@ class TestMode : Fragment() {
 
     private fun getVocab() {
         val db = Firebase.firestore
+        //get the current subject from the title
         val subject = bundle.getString(titleKey)
         Log.d(TAG, "$subject")
+        //get the document from the database
         val docRef = db.collection("Flashcard").document("$subject-$index")
         docRef.get()
             .addOnSuccessListener { document ->
+                // on success listener will save data from document once complete
                 if (document != null) {
                     Log.d(TAG, "DocumentSnapshot data: ${document.data}")
                     word = document.data?.get("Word")?.toString()
@@ -91,6 +95,7 @@ class TestMode : Fragment() {
 
     }
     private fun checkAnswer(userAnswer: String): Boolean {
+        //Check the answer and return true for correct and false for incorrect
         return userAnswer == defintion
     }
 
